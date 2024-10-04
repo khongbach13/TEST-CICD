@@ -1,0 +1,21 @@
+name: PHUONG
+on:
+  push:
+    branches:
+      - main
+jobs:
+  create-file:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Bước 1: Checkout code từ repository
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Bước 2: Tạo file đơn giản
+    - name: Create a simple file
+      run: echo "Hello, this is a test file!" > hello.txt
+
+    # Bước 3: In nội dung file ra để kiểm tra
+    - name: Show file content
+      run: cat hello.txt
